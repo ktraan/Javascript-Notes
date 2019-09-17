@@ -46,7 +46,7 @@
 - The ``.addEventListener("event", function);`` will take the first parameter as the event, and second as the function that is created.
 
 ### Event Handler
-- An event handler is a function
+- An event handler is a function that reacts to the event
 
 
 
