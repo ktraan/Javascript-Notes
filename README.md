@@ -35,3 +35,29 @@
 - Return value:
 -- ``console.log(someElements[0].innerHTML);``
 
+## Events
+- An event anything that the user does on the webpage
+-- ex Clicking, mouse movements, keystroke, loaded a page, leaving a page
+
+### Event Listener
+- Event listeners listen for a specific event to happen.
+- Events listeners don't do anything, they just listen.
+- They are given two arguments, the event type and the Eventhandler callback function.
+- The ``.addEventListener("event", function);`` will take the first parameter as the event, and second as the function that is created.
+
+### Event Handler
+- An event handler is a function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
