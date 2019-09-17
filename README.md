@@ -50,7 +50,16 @@
 
 ### Event Objects
 - The event object holds additional data about the event
-- 
+
+### Default Actions
+- Many events have a default action associated with them.
+- ex. Clicking a link will go to the link, right clicking will give you the menu
+- You can prevent default actions using the ``preventDefault`` method on the event object.
+
+### Propagation of Events
+- The order of events that happen will go from the bottom up.
+- You can use ``.stopPropgation`` for the ``.addEventListener`` on the desired event.
+
 
 
 
