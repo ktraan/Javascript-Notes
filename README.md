@@ -44,9 +44,13 @@
 - Events listeners don't do anything, they just listen.
 - They are given two arguments, the event type and the Eventhandler callback function.
 - The ``.addEventListener("event", function);`` will take the first parameter as the event, and second as the function that is created.
-
+- https://developer.mozilla.org/en-US/docs/Web/Events for all the different events
 ### Event Handler
 - An event handler is a function that reacts to the event
+
+### Event Objects
+- The event object holds additional data about the event
+- 
 
 
 
