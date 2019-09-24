@@ -60,6 +60,8 @@
 - The order of events that happen will go from the bottom up.
 - You can use ``.stopPropgation`` for the ``.addEventListener`` on the desired event.
 
+### Linking the main.js file
+- <script src="js/main.js" type="text/javascript"></script>
 
 
 
