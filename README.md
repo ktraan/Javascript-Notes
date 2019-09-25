@@ -35,6 +35,11 @@
 - Return value:
 -- ``console.log(someElements[0].innerHTML);``
 
+### .classList
+- Returns class name of an element
+- ``element.classList``
+- Also has ``.add`` and ``.remove`` properties
+
 ## Events
 - An event anything that the user does on the webpage
 -- ex Clicking, mouse movements, keystroke, loaded a page, leaving a page
@@ -64,8 +69,16 @@
 - <script src="js/main.js" type="text/javascript"></script>
 
 
+## Decision Statements and Operators
+- ``====`` means both sides are identical
+- ``!==`` means both sides are not identical
+- 
 
-
+### Automatic Type Converision
+- JS will go out of its way to accept any program you give it.
+- When types are different JS will change the variables and return something meaningful(might not be correct)
+- 
+ 
 
 
 
