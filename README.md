@@ -80,9 +80,15 @@
 - 
  
 
+## HTTPS The basics
+- Computer(browser)  -------Requests(get, post.. )---->    The Server(where your webserver and DB is)
+- Computer(browser)   <-------Response-----------             The Server(where your webserver and DB is)
 
-
-
+### Form Fields - Accessing the fields
+- You can select something in the form by ``form.elements["<name of input>"]``
+- Form fields can get a keyboard focus on the field. (ex login pages)
+  - This is used all the time so you don't have to activily click the element to enter a username(login page)
+  - The ``.activeElement`` property
 
 
 
