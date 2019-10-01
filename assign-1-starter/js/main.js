@@ -2,7 +2,6 @@
 
 
 let memeSelect = document.querySelector("select#meme-image");
-let memeOption = document.querySelector("option");
 let topTextBox = document.querySelector("input#meme-top-text");
 let bottomTextBox = document.querySelector("input#meme-bottom-text");
 let memeForm = document.querySelector(".meme-form");
