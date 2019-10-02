@@ -1,4 +1,4 @@
-// Enter your JavaScript for the solution here...
+//Enter your JavaScript for the solution here...
 
 
 let memeSelect = document.querySelector("select#meme-image");
@@ -11,22 +11,24 @@ let memePhoto = document.querySelector("img");
 let memeTopText = document.querySelector(".top-text");
 let memeBottomText = document.querySelector(".bottom-text")
 
+
 memeForm.addEventListener("submit", (event) =>
 {
+	let error = "";	
 	
 	if (memeSelect.selectedIndex == 0)
 	{
-		errorMessage.innerHTML = "Error, please select an image";
+		error += "<p>Please select an image</p>";
 		event.preventDefault();
 	}
-	else if (topTextBox.value == "")
+	if (topTextBox.value == "")
 	{
-		errorMessage.innerHTML = "Error, please fill in the top text";
+		error += "<p>Please enter the top text</p>";
 		event.preventDefault();
 	}
-	else if (bottomTextBox.value == "")
+	if (bottomTextBox.value == "")
 	{
-		errorMessage.innerHTML = "Error, please fill in the bottom text";
+		error += "<p>Please enter the bottom text</p>";
 		event.preventDefault();
 	}
 	else
@@ -56,6 +58,7 @@ memeForm.addEventListener("submit", (event) =>
 			event.preventDefault();
 		}
 	}
+	document.querySelector("div.error").innerHTML = error;
 });
 
 memeForm.addEventListener("reset", (event) =>
@@ -64,4 +67,29 @@ memeForm.addEventListener("reset", (event) =>
 	memeBottomText.innerText = "";
 	memePhoto.src = "https://via.placeholder.com/550x300?text=Choose+an+image+from+the+dropdown";
 	memePhoto.alt = "Placeholder Image";
+});
+
+memeSelect.addEventListener("change", (event) =>
+{
+	if (memeSelect.options.selectedIndex == 0)
+	{
+		memePhoto.src = "https://via.placeholder.com/550x300?text=Choose+an+image+from+the+dropdown";
+		memePhoto.alt = "Placeholder Image";
+	}
+	if (memeSelect.options.selectedIndex == 1)
+	{
+		memePhoto.alt = "Fry Meme";
+		memePhoto.src = "img/fry-meme.png"
+	}
+	if (memeSelect.options.selectedIndex == 2)
+	{
+		memePhoto.alt = "One Does Not Simply Meme";
+		memePhoto.src = "img/one-does-not-simply-meme.png";
+	}
+	if (memeSelect.options.selectedIndex == 3)
+	{
+		memePhoto.alt = "Most Interesting Man Meme";
+		memePhoto.src = "img/most-interesting-man-meme.png";
+	}
+
 });
