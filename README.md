@@ -90,6 +90,13 @@
   - This is used all the time so you don't have to activily click the element to enter a username(login page)
   - The ``.activeElement`` property will show the active element
 
+## Loops, Arrays, NodeLists
+- ``continue`` will reiterate the loop again
+### Array Methods
+- push - adds an item at the end of the array
+- pop - removes the last item of the array
+- length - gives length of the list
+
 
 
 
