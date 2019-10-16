@@ -1,5 +1,8 @@
 # Javascript-Notes
 
+edmontonstartupweek.com
+studentstartuplife.com
+
 ## Variables
 - Variables in JS are defined using the word var
 - var can be used for strings, numbers, elements
@@ -96,6 +99,15 @@
 - push - adds an item at the end of the array
 - pop - removes the last item of the array
 - length - gives length of the list
+
+### NodeList
+- It is a list of DOM elements
+- They are missing some methods like pop, push, slice
+- You can convert a nodelist to an array with the method ``Array.from(nodeListVar)``
+- ``let paragraphs = document.querySelectorAll('p');``
+    ``paragraphs.foreach(element, index) => { console.log(element) }``
+    ``element.innerText = "";``
+
 
 
 
