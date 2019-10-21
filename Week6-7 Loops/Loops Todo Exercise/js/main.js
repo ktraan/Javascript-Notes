@@ -1,1 +1,0 @@
-let toggle = document.querySelector('[name=toggle]');
