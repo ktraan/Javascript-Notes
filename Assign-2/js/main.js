@@ -1,19 +1,20 @@
 let input = document.querySelector("input");
-let thumbnailText = document.querySelectorAll("p");
-let thumbnailTextArray = Array.from(thumbnailText);
-let imageList = document.querySelectorAll("img");
-let imageArray = Array.from(imageList);
 
+let div = document.querySelectorAll(".thumb-display");
+let divArray = Array.from(div);
+let hiddenDiv = ".thumb-display.hidden"
 
 input.addEventListener("input", event =>
 {
-
-	for (let count; count < thumbnailTextArray.length; count++)
+	for (let count = 0; count < divArray.length; count++)
 	{
-		
+		if (!divArray[count].innerText.includes(input.value))
+		{
+			divArray[count].className = hiddenDiv;
+		}
+
 	}
 
-
-
-});
+	
+};
 
