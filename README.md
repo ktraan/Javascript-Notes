@@ -108,6 +108,16 @@ studentstartuplife.com
     ``paragraphs.foreach(element, index) => { console.log(element) }``
     ``element.innerText = "";``
 
+## Preloading Images and Timers
+
+### Preloading Images
+- It is a great way to give the user a better experience
+
+### Timers
+- ``setTimeout`` calls function after a specified amount of time ( one time )
+- ``clearTimeout`` if you want to cancel one of the ``setTimeouts`` then you can use this to call it
+- ``setInterval`` sets interval every X milliseconds (repeat) 
+- ``clearInterval`` allows us to cancel the ``setIntervals``
 
 
 
