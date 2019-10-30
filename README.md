@@ -104,9 +104,11 @@ studentstartuplife.com
 - It is a list of DOM elements
 - They are missing some methods like pop, push, slice
 - You can convert a nodelist to an array with the method ``Array.from(nodeListVar)``
-- ``let paragraphs = document.querySelectorAll('p');``
-    ``paragraphs.foreach(element, index) => { console.log(element) }``
-    ``element.innerText = "";``
+```js
+let paragraphs = document.querySelectorAll('p');
+paragraphs.foreach(element, index) => { console.log(element) }
+element.innerText = "";
+```
 
 ## Preloading Images and Timers
 
@@ -118,6 +120,41 @@ studentstartuplife.com
 - ``clearTimeout`` if you want to cancel one of the ``setTimeouts`` then you can use this to call it
 - ``setInterval`` sets interval every X milliseconds (repeat) 
 - ``clearInterval`` allows us to cancel the ``setIntervals``
+
+
+## DOM APIs
+
+## JS and changing HTML
+### Create and Appending Nodes ex.
+```javascript
+let textInNode = "This is the " + count + " div";
+count++;
+// create the elements and text;
+let newItem.createElement('div');
+let textNode = document.createTextNode(textInNode);
+
+// append the text node to the newItem
+newItem.appendChild(textNode);
+// apprend newItem to items
+items.appendChild(newItem);
+```
+
+### Creating Nodes
+- JS allows us to add new nodes and we use this all the time for our pages
+- To create nodes you can use the:
+``document.createElement("<insert type>");``
+- To create text:
+``document.createTextNode("insert text");``
+
+- After creating nodes and text, you need to append them to the DOM
+- The two methods to do this are:
+- ``newItem.appendChild(<insert node type>);``
+- ``items.appendChild(newItem);``
+
+- ``.nextElementSibling`` will give the next element
+- ``.nextSibling`` will give the next node
+    - ``.children`` will show the children of the element
+- ``.insertBefore`` will insert the nodes before
 
 
 
