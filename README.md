@@ -139,7 +139,7 @@ newItem.appendChild(textNode);
 items.appendChild(newItem);
 ```
 
-### Creating Nodes
+### Nodes
 - JS allows us to add new nodes and we use this all the time for our pages
 - To create nodes you can use the:
 ``document.createElement("<insert type>");``
@@ -155,6 +155,16 @@ items.appendChild(newItem);
 - ``.nextSibling`` will give the next node
     - ``.children`` will show the children of the element
 - ``.insertBefore`` will insert the nodes before
+- ``.children`` will show the children of the nodelist
+- ``.childrenNodes`` will show all of the children of the nodelist. This will also include any text that is included in the HTML
+- ``.parentNode`` will return the parents of the node.
+- ``.insertBefore(item1, item2)`` will insert the first element before the last element
+- ``.removeChild`` will remove the child
+
+
+### Setting Attributes
+- In JS, we want to change the behaviour of a DOM node we can change it's attributes(the attributes of the HTML tag)
+- ``.setAttribute(attributeName, what to set the attribute to)``
 
 
 
