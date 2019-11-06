@@ -43,9 +43,9 @@ document.querySelector('.todo-frm').addEventListener('submit', function (evt) {
 	// Span Stuff
 	span = document.createElement("span");
 	secondSpan = document.createElement("span");
+	thirdSpan = document.createElement("span");
 	span.setAttribute("class", "arrow dn");
 	secondSpan.setAttribute("class", "arrow up");
-	thirdSpan = document.createElement("span");
 	thirdSpan.setAttribute("class", "arrow right");
 
 	let dn = '\u21e9'; // Unicode value of down arrow
