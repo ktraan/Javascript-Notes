@@ -45,12 +45,19 @@ document.querySelector('.todo-frm').addEventListener('submit', function (evt) {
 	secondSpan = document.createElement("span");
 	span.setAttribute("class", "arrow dn");
 	secondSpan.setAttribute("class", "arrow up");
+	thirdSpan = document.createElement("span");
+	thirdSpan.setAttribute("class", "arrow right");
+
 	let dn = '\u21e9'; // Unicode value of down arrow
 	let up = '\u21e7'; // Unicode value of up arrow
+	let rt = '\u21e8'; // right arrow unicode
 	firstSpanText = document.createTextNode(dn);
 	secondSpanText = document.createTextNode(up);
+	thirdSpanText = document.createTextNode(rt);
+
 	span.appendChild(firstSpanText);
 	secondSpan.appendChild(secondSpanText);
+	thirdSpan.appendChild(thirdSpanText);
 
 	// build document fragment
 	label.appendChild(labelText);
@@ -59,8 +66,9 @@ document.querySelector('.todo-frm').addEventListener('submit', function (evt) {
 
 	// add the document fragment to the document for rendering
 
-	todos.appendChild(span);
-	todos.appendChild(secondSpan);
+	div.appendChild(span);
+	div.appendChild(secondSpan);
+	div.appendChild(thirdSpan);
 	todos.appendChild(div);
 	// clear the form
 
@@ -70,19 +78,46 @@ document.querySelector('.todo-frm').addEventListener('submit', function (evt) {
 
 document.querySelector('.todo-list').addEventListener('click', function (evt) {
  // check for click on an arrow
- let targetTodo = evt.target.parentNode;
- let todoList = targetTodo.parentNode;
- let siblingTodo;
  if (evt.target.classList.contains('arrow')) {
  // identify the type of arrow (i.e. down or up)
  if (evt.target.classList.contains('dn')) {
- siblingTodo = targetTodo.nextElementSibling;
- // insert the sibling before the target
- todoList.insertBefore(siblingTodo, targetTodo);
+ console.log(evt.target.parentNode + ' down...');
  } else if (evt.target.classList.contains('up')) {
- siblingTodo = targetTodo.previousElementSibling;
- // insert the sibling before the target
- todoList.insertBefore(targetTodo, siblingTodo);
+ console.log('up...');
  }
  }
+});
+
+
+document.querySelector('.todo-list').addEventListener('click', function (evt) {
+ // check for click on an arrow
+ let targetTodo = evt.target.parentNode;
+ let todoList = targetTodo.parentNode;
+ let siblingTodo;
+console.log(targetTodo);
+console.log(todoList);
+
+if (evt.target.classList.contains('arrow')) {
+// identify the type of arrow (i.e. down or up)
+	if (evt.target.classList.contains('dn')) {
+ 		 siblingTodo = targetTodo.nextElementSibling;
+ 		 // insert the sibling before the target
+ 		 todoList.insertBefore(siblingTodo, targetTodo);
+
+ 	 } 
+  	else if (evt.target.classList.contains('up')) {
+ 		 siblingTodo = targetTodo.previousElementSibling;
+ 		 // insert the sibling before the target
+ 		 todoList.insertBefore(targetTodo, siblingTodo);
+ 	 }
+
+ 	else if (evt.target.classList.contains("right"))
+ 	 {
+		let confirm = window.confirm("Are you sure you want to delete?");
+		if (confirm == true)
+		{
+			todoList.removeChild(targetTodo);
+		}
+ 	 }
+}
 });
