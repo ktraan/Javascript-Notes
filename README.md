@@ -166,7 +166,27 @@ items.appendChild(newItem);
 - In JS, we want to change the behaviour of a DOM node we can change it's attributes(the attributes of the HTML tag)
 - ``.setAttribute(attributeName, what to set the attribute to)``
 
-
+## **AJAX & JSON**
+- AJAX stands for asynchronus Javascript + XML. Now we use JSON(Javascript Object Notation) as the way to represent information rather than XML.
+- APIs are used between the client browser and the server.
+ - ## **Synchronus & Asynchronus**
+ - ### Client Browser - HTTP Server
+   - **Synchronus** HTTP will send HTTP request and have a HTTP response
+   - **Asynchronus** will send HTTP request and response, but also AJAX request and response. With the extra request, you can request more information while on the page.
+ - ## HTTP Basics - Status Codes
+   - GET, PUT, POST, DELETE
+   - Get will retrieve information from the server
+   - Post is sending information to the server
+   Put will change a resource that exists
+   - Status code in responses: 
+     - 100 - Informational
+     - 200 - Success
+     - 300 - Redirection (ex. redirecting http request to https)
+     - 400 - Client Error(ex. resource not found on website)
+     - 500 - Server Error
+  - Async HTTP:
+  - Make request to url, return the response by using fetch.
+  
 
 
 
