@@ -187,6 +187,19 @@ items.appendChild(newItem);
   - Async HTTP:
   - Make request to url, return the response by using fetch.
   
+## Objects
+- Objects are created with key value names(properties in c#)
+
+## JSON
+ - JSON basically converts an object to a string.
+ - Used to exchange data between client and server
+ - Example of JSON string: ``var jsonString = '{"result":true, "count":42}``
+   - **Converting JSON to Object**
+   - Use JSON.parse(JSON string) to parse the JSON string to an object
+   - **Converting Objects to JSON**
+   - Use JSON.stringify(object) to convert object to JSON string
+
+
 
 
 
