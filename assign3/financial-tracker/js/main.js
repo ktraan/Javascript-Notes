@@ -67,7 +67,7 @@ trackerForm.addEventListener("submit", event =>
 
 	if (type == 'credit')
 	{
-		creditSum += Number(moneyInput.value)
+		creditSum += Number(moneyInput.value);
 		let totalCredits = document.querySelector("span[class='total credits']");
 		totalCredits.innerText = "$" + creditSum.toFixed(2);
 	}
@@ -82,8 +82,10 @@ tableBody.addEventListener("click", event =>
 	let trash = event.target;
 	let tools = trash.parentNode;
 	let transaction = tools.parentNode;
-	console.log(transaction)
-	if (event.target.classList.contains("delete") && transaction.className == "debit")
+
+	if (event.target.classList.contains("delete") 
+		&& transaction.className == "debit"
+		&& confirm("Are you sure you want to delete this transaction?"))
 	{
 		tableBody.removeChild(transaction);
 		let amountToRemove = transaction.children[2].innerText.replace("$", "");
@@ -91,7 +93,9 @@ tableBody.addEventListener("click", event =>
 		let totalDebits = document.querySelector("span[class='total debits']");
 		totalDebits.innerText = "$" + debitSum.toFixed(2);
 	}
-	if (event.target.classList.contains("delete") && transaction.className == "credit")
+	if (event.target.classList.contains("delete") 
+		&& transaction.className == "credit"
+		&& confirm("Are you sure you want to delete this transaction?"))
 	{
 		tableBody.removeChild(transaction);
 		let amountToRemove = transaction.children[2].innerText.replace("$", "");
@@ -100,6 +104,26 @@ tableBody.addEventListener("click", event =>
 		totalCredits.innerText = "$" + creditSum.toFixed(2);
 	}
 
-})
+});
+
+
+let timer;
+
+function refreshTimer(){
+	clearTimeout(timer);
+	timer = setTimeout(function(){
+		alert("You have been inactive, page will refresh");
+		location.reload(true);
+
+	}, 120000);
+	
+}
+
+window.onload = refreshTimer;
+window.onmousemove = refreshTimer;
+window.onclick = refreshTimer;
+window.onkeydown = refreshTimer;
+window.onwheel = refreshTimer;
+
 
 
