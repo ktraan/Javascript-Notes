@@ -5,8 +5,9 @@ let typeSelect = document.querySelector("select");
 let moneyInput = document.querySelector("div.frm-group input[type='number']");
 let error = document.querySelector("div.error");
 
-
 let tableBody = document.querySelector("tbody");
+let debitSum = 0;
+let creditSum = 0;
 
 trackerForm.addEventListener("submit", event =>
 {
@@ -49,21 +50,56 @@ trackerForm.addEventListener("submit", event =>
 	descriptionElement.appendChild(descriptionNode);
 	typeElement.appendChild(typeNode);
 	amountElement.appendChild(amountNode);
-	toolsElement.appendChild(imageElement);
-
+	toolsElement.appendChild(imageElement); 
 	newItem.appendChild(descriptionElement);
 	newItem.appendChild(typeElement);
 	newItem.appendChild(amountElement);
 	newItem.appendChild(toolsElement);
 	tableBody.appendChild(newItem);
 
-	let tdAmount = document.querySelectorAll(".amount");
-	let trDebit = document.querySelectorAll(".debit");
-	let trCredit = document.querySelectorAll(".credit");
+	let type = event.target.elements['type'].value;
+	if (type == 'debit')
+	{
+		debitSum += Number(moneyInput.value);
+		let totalDebits = document.querySelector("span[class='total debits']");
+		totalDebits.innerText = "$" + debitSum.toFixed(2);
+	}
+
+	if (type == 'credit')
+	{
+		creditSum += Number(moneyInput.value)
+		let totalCredits = document.querySelector("span[class='total credits']");
+		totalCredits.innerText = "$" + creditSum.toFixed(2);
+	}
 
 	}
 
-	
-
 });
+
+tableBody.addEventListener("click", event =>
+{
+
+	let trash = event.target;
+	let tools = trash.parentNode;
+	let transaction = tools.parentNode;
+	console.log(transaction)
+	if (event.target.classList.contains("delete") && transaction.className == "debit")
+	{
+		tableBody.removeChild(transaction);
+		let amountToRemove = transaction.children[2].innerText.replace("$", "");
+		debitSum = debitSum - amountToRemove;
+		let totalDebits = document.querySelector("span[class='total debits']");
+		totalDebits.innerText = "$" + debitSum.toFixed(2);
+	}
+	if (event.target.classList.contains("delete") && transaction.className == "credit")
+	{
+		tableBody.removeChild(transaction);
+		let amountToRemove = transaction.children[2].innerText.replace("$", "");
+		creditSum = creditSum - amountToRemove;
+		let totalCredits = document.querySelector("span[class='total credits']");
+		totalCredits.innerText = "$" + creditSum.toFixed(2);
+	}
+
+})
+
 
