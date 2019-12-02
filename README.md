@@ -200,6 +200,17 @@ items.appendChild(newItem);
    - Use JSON.stringify(object) to convert object to JSON string
 
 
+## Web Application Architecture
+### Common Web Application Components
+- Most or all web applications have the following parts.
+  - A Server(which is a computer) ex. Windows Server
+  - A Webserver (application which exposes web pages/rest apis publicly)
+  - A DB to store information
+### Pretty common web components
+ - Load Balancer - Distributes load horizontally across many web servers ex. HA Proxy, Nginx
+ - Caching Server/In Memory Datastore - Caching releives load on servers ex. Memcached, Redis
+ - Search Service - Index items we want to search with a searching service to get a better UX. ex. Elasticsearch, Apache Solr
+ - 3rd Party APIS(Rest APIs, Serving JSON normally) - Powers applications and gives functionallity that would take too much time to write on your own. ex. Stripe For Money, Twilio for SMS, Campaign Monitor for Email
 
 
 
