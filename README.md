@@ -212,6 +212,74 @@ items.appendChild(newItem);
  - Search Service - Index items we want to search with a searching service to get a better UX. ex. Elasticsearch, Apache Solr
  - 3rd Party APIS(Rest APIs, Serving JSON normally) - Powers applications and gives functionallity that would take too much time to write on your own. ex. Stripe For Money, Twilio for SMS, Campaign Monitor for Email
 
+### JQuery
+- There are popular frameworks such as
+  - React (facebook)
+  - JQuery
+  - Angular (google)
+  - Vue.js 
+- JQuery is a library that abstracts some of the negative things in Javascript
+   - It supports CSS selectors, standardized arcoss browers
+- You can import Jquery into projects in two ways: 
+  - Using a CDN(someone else is hosting it)
+    - code.jqery.com/
+    - click minified version and link script before JS files
+  - Downloading locally(you are hosting it)
+    - jquery.com/download
+    - Copy file into JS folder(minified version)
+    - Link script before JS files
+```javascript
+// You can start using it by 
+console.log($('selector'));
+
+// You can also use css selectors
+console.log($('p:eq(1)').text());
+
+// - You can change values using .text and .html
+$("p:eq(1)").text("Using the text function");
+$("p:eq(1)").html("The first paragraph");
+```
+- Event listeners with JQuery is replaced with ```.on()```
+- ```event.target``` can be replaced with ```this```
+- ```return false``` can be replaced with ```event.preventDefault()```
+```javascript
+// html example
+<div class="selector-example">
+  <a href="www.nhl.com">Some sample</a>
+</div>
+
+$('a').on('click', function (evt) 
+{ // Example of how this being the same as evt.target
+  console.log(this);
+  console.log(evt.target);
+  return false;
+});
+{
+  $('.selector-example').on('click', function (evt)
+  {
+    console.log(this); // Bubbles up to the div
+    console.log(evt.target);
+    return false;
+  });
+}
+```
+
+- **Classes: Toggling, Adding, and Removing**
+   ```javascript
+    // hasClass - checks if selected element has class
+    // removeClass - removes class
+    // addClass - adds class
+    // toggleClass - removes and adds class depending on the state
+    ```
+- **Working with Attributes (and props)**
+  - You can setAttribute with attr()
+  - prop() can get the value of a checkbox or a disabled state
+  - You can also set multiple attributes at once
+  
+
+
+
+
 
 
 
