@@ -275,7 +275,21 @@ $('a').on('click', function (evt)
   - You can setAttribute with attr()
   - prop() can get the value of a checkbox or a disabled state
   - You can also set multiple attributes at once
-  
+
+- **Adding Items in JQuery with .append()**
+  - Select the item you'd like to append
+  - Create any of the following elements:
+    - HtmlString
+    - Element
+    - Array
+    - JQuery Object
+
+- **Working with Ajax and JQuery**
+  - ```&.ajax()``` method is used. Pass in JS Object with the following key value pairs:
+    - url: value of url you want to use
+    - success: with a function that handles the response
+
+CSS Diner for css selectors
 
 
 
