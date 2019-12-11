@@ -333,6 +333,10 @@ CSS Diner for css selectors
   - Once the model changes, it will notify the ViewModel.
 - ***Model***
   - The only difference is that it will notify the model of changes
+- **Vue.js a MVVM framework**
+  - Vue sits between the Model and the View and syncs them.
+  - Vue element references the html either via a template or selecting an element
+  - Vue instance updates the data object within the instance
   
 
 
