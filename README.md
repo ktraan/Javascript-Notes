@@ -291,6 +291,49 @@ $('a').on('click', function (evt)
 
 CSS Diner for css selectors
 
+## MCV, MVVM And Vue
+- There are design patterens that help create web applciations simpler. The two patterens are 
+  - Model View Controller(MVC)
+  - Model View ViewModel (MVVM)
+- **MVC**
+  - 1. User sends request to a controller
+  - 2. Controller gets data from database or some type of BLL device or changes/saves data
+  - 3. Controller renders a page
+  - 4. Page is show in the users browser
+  - Some examples of MVC frameworks are ASP.NET, Laravel(PHP), Djaango(Python)
+  - MVC is primarily used on the backend while MVVM will be primarily used on the front end
+- ***Model***
+  - Model is the data is needed to populate the view
+  - It is comprised of BLL rules
+  - CRUD Operations
+- ***View***
+  - View is the piece that is displaying the data to the user
+  - It can be displayed in many ways such as text, chart, diagram, table, forms
+- ***Controller***
+  - Controller is responsible for handling incoming requests
+  - The controller will handle the data by sending to the "Model" when an event is fired
+  - The controller will also render the view. You can think of this as displaying the data that you have fetched from your model to display it to the user
+- **MVVM**
+  - 1. User intracts with the view modifying the things on the page
+  - 2. As the dom changes, this triggers the two way data binding that will change the state
+  - 3. Event changes (depending on the function) will update the model
+  - 4. The model notifies the changes to the view model which will in turn update the view via the two data binding 
+  - Some examples of MVVM frameworks are Vue(JS), Angular1&2(JS), Ember.js
+- ***View***
+  - The major differences from MVC is that the View triggers the ViewModel to update. This is called two way data binding
+  - two way data binding means
+    - Any changes in the View's DOM will update the ViewModel data/variables
+    - Any changes in the ViewModel Data will update the view accordingly
+  - A View can display data/manipulate data in the same way
+- ***ViewModel***
+  - ViewModel acts as an intermediary between the model and the view
+  - One of the largest jobs of the ViewModel is to handle the current state of what the user sees
+  - With two way data binding, the view chages the variables in the ViewModel
+  - Once any variable changes in the viewmodel, this triggers the change in the model
+  - Once the model changes, it will notify the ViewModel.
+- ***Model***
+  - The only difference is that it will notify the model of changes
+  
 
 
 
