@@ -37,6 +37,8 @@ completeHomeWork(false).catch((result) =>{
 });
 // this a negative promise result so we can not go out.
 // Note: we used .catch() to process negative results
-
 ````
+## Spread Operator
+- The spread operator allows you to spread an array or object into a new array or object
+- The prefix of "```...```" before the array/object is the spread operator
 
