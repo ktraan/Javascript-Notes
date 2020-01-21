@@ -56,19 +56,17 @@ completeHomeWork(false).catch((result) =>{
 -devDependancies are to specifcy the packages required during development. These will not be included when the project is deployed. Ex. Babel, Chai, Mocha
 - dependancies specifies packages that our application will use during runtimes ex. React, Vue
 
-## Babel
+## Babel and ES6+ to ES5
 - Babel is a transpiler that allows us to write ES6+ and translates it down to ES5. The reason to do this is that most browsers will be able to understand code in ES5
 - Installing Babel ```npm install --save-dev @babel/core @babel/cli @babel/preset-env```
 - To see if the output run ```npx babel -h```
+- We will use presets, which is a group of modules that transforms the code
+- Run the cmd ```npx babel js/main.es6.js --out-file js/main.js --presets=@babel/preset-env``` (note: you can use -o instead of --out-file)
+  - “```js/main.es6.js```” is the ES6 file you want transformed.
+  -  “```--out-file js/main.js```” specifies the file you want your output your ES5 code to. 
+  - “```--presets=@babel/preset-env```” specifies the types of   transformations you’d like to do
 
-## Babel ES6+ to ES5
-- We will use persets, which is a group of modules that transforms the code
-- Run the cmd ```npx babel js/main.es6.js --out-file js/main.js --presets=@babel/preset-env```
-  - “js/main.es6.js” is the ES6 file you want transformed.
-  -  “--out-file js/main.js” specifies the file you want your output your ES5 code to. 
-  - “--presets=@babel/preset-env” specifies the types of   transformations you’d like to do, “@babel/preset-env” 
-
-- A way to simplify this proccess: 
+- Using this will be allow you to be able to run ```npm run build``` without having to run the ES6 to ES5 cmd
 ````javascript
 "scripts": {
 "build": "npx babel js/main.es6.js -o js/main.js"
@@ -79,4 +77,12 @@ completeHomeWork(false).catch((result) =>{
     ]
   }
 ````
+
+## ESLint
+- ESLint is a package that you can install to help make code more consistent and tells you how to make your code more clean
+- Installation guide: https://eslint.org/docs/user-guide/getting-started
+
+
+
+
 
