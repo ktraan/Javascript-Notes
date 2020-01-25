@@ -1,0 +1,24 @@
+{
+  "name": "weather-app",
+  "version": "0.0.1",
+  "description": "Displays some weather and the forecast",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel js/main.es6.js -o js/main.js",
+    "lint": "npx eslint js/main.es6.js"
+  },
+  "author": "Dan Mouris",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "eslint": "^6.8.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}

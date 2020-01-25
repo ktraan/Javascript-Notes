@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stock Price Checker</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <h1>Stock Checker</h1>
+    <form class="frm stock">
+    <label for="stocksymbol">Enter Stock Ticker Symbol:</label>
+    <input type="text" id="symbol" name="symbol" />
+    <button type="submit">Get Prices</button>
+    </form>
+
+    <section class="stock-display">
+    <h1>Stock Information</h1>
+    <div class="information">Stock Ticker Symbol: <span class="symbol"></span></div>
+    <div class="information">Current Close Price: <span class="price"></span></div>
+    <div class="information">Current Date: <span class="date"></span></div>
+    </section>
+
+
+
+    <script src="js/main.es6.js"></script>
+  </body>
+</html>
