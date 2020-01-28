@@ -1,19 +1,37 @@
-// API KEY: 097S0L4ON78BMIRE
-// Example URL: https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=097S0L4ON78BMIRE
+/**
+* This Stock App is to display information of the chosen stock.
+* The user will enter a ticker symbol and it will retreive the symbol, price and the current date 
+*/
 (() =>
 {
+	/**
+	* @const {string} BASE_END_POINT
+	*/
 	const BASE_END_POINT = "https://www.alphavantage.co/query?";
+	/**
+	* @const {string} FUNCTION_TYPE
+	*/
 	const FUNCTION_TYPE = "TIME_SERIES_DAILY";
+	/**
+	* @const {string} API_KEY
+	*/
 	const API_KEY = "097S0L4ON78BMIRE";
 
 	let stockElement = document.querySelector(".stock-display");
 
+	/**
+	* This function will display the stock information
+	* @param {Object} stockData - The current stock information from Alpha Vantage
+	*/
 	const displayStockInformation = (stockData) =>
 	{
-		console.log("stock data:")
-		
 		let tickerSymbol = stockElement.querySelector(".information .symbol");
+		let closePrice = stockElement.querySelector(".information .price")
+		let currentDate = stockElement.querySelector(".information .date")
 
+		tickerSymbol.innerText = stockData["Meta Data"]["2. Symbol"];
+		currentDate.innerText = new Date(stockData["Meta Data"]["3. Last Refreshed"]);
+		closePrice.innerText = stockData["Time Series (Daily)"]["2020-01-27"]["4. close"];
 	}
 
 
@@ -31,7 +49,6 @@
 			return response.json();
 		}).then((currentStockObject) =>
 		{
-			console.log(currentStockObject.("Meta Data"));
 			displayStockInformation(currentStockObject);
 
 		}).catch((error) =>
