@@ -11,11 +11,8 @@
 	const displayStockInformation = (stockData) =>
 	{
 		console.log("stock data:")
-		console.log(stockData);
-		console.log(metaData);
-		let tickerSymbol = stockElement.querySelector(".information .symbol");
-
 		
+		let tickerSymbol = stockElement.querySelector(".information .symbol");
 
 	}
 
@@ -27,7 +24,6 @@
 		event.preventDefault();
 		let tickerSymbol = event.target.querySelector('[name=symbol]').value;
 		let currentStockEndPoint = `${BASE_END_POINT}function=${FUNCTION_TYPE}&symbol=${tickerSymbol}&apikey=${API_KEY}`;
-		console.log(currentStockEndPoint);
 
 		fetch(currentStockEndPoint).then((response) =>
 		{
@@ -35,6 +31,7 @@
 			return response.json();
 		}).then((currentStockObject) =>
 		{
+			console.log(currentStockObject.("Meta Data"));
 			displayStockInformation(currentStockObject);
 
 		}).catch((error) =>
