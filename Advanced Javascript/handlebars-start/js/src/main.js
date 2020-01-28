@@ -4,11 +4,11 @@ const template = Handlebars.compile(source);
 
 Handlebars.registerHelper("currency", (value) =>
 {
-    return value.toLocalString("en-US", 
+    return value.toLocaleString("en-US", 
     {
       style: "currency",
       currency: "USD",
-      
+
     })
 });
 

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "compile": "npx babel js/src --out-dir js/dist",
-    "watch": "npx babel js/src --watch --out-dir js/dist"
+    "watch": "npx babel js/src --watch --out-dir js/dist",
+    "handlebars": "npx handlebars js/src/templates/project.handlebars -f js/dist/project-handlebars.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,8 @@
     "@babel/preset-env": "^7.1.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0"
+    "@babel/polyfill": "^7.0.0",
+    "handlebars": "^4.7.2"
   },
   "babel": {
     "presets": [
