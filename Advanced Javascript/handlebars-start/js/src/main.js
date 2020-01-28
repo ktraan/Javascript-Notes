@@ -1,26 +1,23 @@
+// Let's compile the template
+const source = document.querySelector("#project-template").innerHTML;
+const template = Handlebars.compile(source);
+
+Handlebars.registerHelper("currency", (value) =>
+{
+    return value.toLocalString("en-US", 
+    {
+      style: "currency",
+      currency: "USD",
+      
+    })
+});
+
 /**
- * Renders any number of projects to the browser.
- * @param {Array} proj - Array of project objects
+ * Renders a single project.
+ * @param {Object} proj - Single project object 
  */
 const renderProject = (proj) => {
-  document.querySelector('.project-title .title').innerHTML = proj.title;
-  document.querySelector('.details .start').innerHTML = proj.start;
-  document.querySelector('.details .end').innerHTML = proj.end;
-  document.querySelector('.details .budget').innerHTML = `$${Number(proj.budget).toFixed(2)}`;
-
-  let managers = '';
-
-  proj.managers.forEach(mgr => {
-    managers += `
-          <tr>
-            <td>${mgr.name}</td>
-            <td>${mgr.position}</td>
-            <td>${mgr.experience}</td>
-          </tr>`
-  });
-
-  document.querySelector('.tbl-managers tbody').innerHTML = managers;
-
+    document.querySelector(".project").innerHTML = template(proj);
 };
 
 // now, fetch projects and render the first one.

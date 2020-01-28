@@ -96,5 +96,5 @@ completeHomeWork(false).catch((result) =>{
 3. Then you need to include the precompiled file (“js/templates/articles.precompiled.js”) as a script on your html file like so: ```<script src="js/templates/articles.precompiled.js"></script>```
 4. You can now access the precompiled template in js with:let aritclesTemplate = Handlebars.templates.articles
 
-
+- Go to handlebars.js and download the compiler + runtime, place it into the js > vendor folder
 

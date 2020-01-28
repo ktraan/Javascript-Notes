@@ -26,14 +26,16 @@
     <h1>Demonstration of Handlebars Templates</h1>
   </header>
   <section class="project">
-    <h2 class="project-title">Project: <span class="title"></span></h2>
+  </section>
+  <script id="project-template" type="text/x-handlebars-template">
+  	<h2 class="project-title">Project: {{ title }}</h2>
     <section class="details">
       <h3>Details</h3>
       <ul>
-        <li>Project Start - <span class="start"></span></li>
-        <li>Project End - <span class="end"></span></li>
+        <li>Project Start - {{ startDate }}</li>
+        <li>Project End - {{ endDate }}</li>
         <!-- use helper to format as currency -->
-        <li>Estimated Budget - <span class="budget"></span></li>
+        <li>Estimated Budget - {{ currency budget }}</li>
       </ul>
       <section>
         <h4>Project Managers</h4>
@@ -41,13 +43,23 @@
           <thead>
             <tr><th>Name</th><th>Position</th><th>Experience</th></tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+          	{{ #each managers }}
+          	<tr>
+          		<td>{{ name }}</td>
+          		<td>{{ position }}</td>
+          		<td>{{ experience }}</td>
+          	</tr>
+          	{{ /each }}
+          </tbody>
         </table>
       </section>
     </section>
-  </section>
+  </script>
+
 
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="js/vendor/handlebars-v4.7.2.js"
   <script src="js/plugins.js"></script>
   <script src="js/dist/main.js"></script>
   
