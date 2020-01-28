@@ -83,6 +83,18 @@ completeHomeWork(false).catch((result) =>{
 - Installation guide: https://eslint.org/docs/user-guide/getting-started
 
 
+## Templating 
+- Templating allows us to sperate out view logic instead of mixing it into our own code
+- The Handlebars is a templating engine that is mainly used for backend development.
+  - You can install it with ```npm install handlebars```
+  - Some things that handlebars helps us do are loops, with, custom helpers
+- We can use the handlebar's runtime to compile the code rather than having the browser do it
+  - The command you can use is ```npx handlebars```
+
+1. Create a “handlebars” (example filename: “article.handlebars”) template file.
+2. Use the handlebars from when we installed npm ( “npm install handlebars”) to build a precompiled template that we’ll name something like “article.precompiled.js”. We’re going to do this with the following command: ```npx handlebars js/templates/articles.handlebars -f js/templates/articles.precompiled.js ```
+3. Then you need to include the precompiled file (“js/templates/articles.precompiled.js”) as a script on your html file like so: ```<script src="js/templates/articles.precompiled.js"></script>```
+4. You can now access the precompiled template in js with:let aritclesTemplate = Handlebars.templates.articles
 
 
 

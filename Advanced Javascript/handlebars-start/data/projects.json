@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Project 1",
+    "startDate": "Sep-03-19",
+    "endDate": "Jan-17-20",
+    "budget": 127890,
+    "managers": [
+      {
+        "name": "Jane Doe",
+        "position": "Senior Project Manager",
+        "experience": 14
+      },
+      {
+        "name": "Sally Anne",
+        "position": "Project Manager",
+        "experience": 8
+      }
+    ]
+  }
+]
