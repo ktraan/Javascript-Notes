@@ -31,7 +31,7 @@
 
 		tickerSymbol.innerText = stockData["Meta Data"]["2. Symbol"];
 		currentDate.innerText = new Date(stockData["Meta Data"]["3. Last Refreshed"]);
-		closePrice.innerText = stockData["Time Series (Daily)"]["2020-01-27"]["4. close"];
+		closePrice.innerText = stockData["Meta Data"]["3. Last Refreshed"];
 	}
 
 
@@ -45,7 +45,6 @@
 
 		fetch(currentStockEndPoint).then((response) =>
 		{
-			console.log(response.status)
 			return response.json();
 		}).then((currentStockObject) =>
 		{
