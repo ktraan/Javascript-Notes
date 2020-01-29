@@ -4,7 +4,8 @@
   "description": "stock price assignment 1",
   "main": "index.js",
   "scripts": {
-    "test": "check"
+    "test": "check",
+    "build": "npx babel js/main.es6.js -o js/main.js"
   },
   "author": "Kevin Tran",
   "license": "ISC",

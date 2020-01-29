@@ -34,13 +34,12 @@
 		closePrice.innerText = stockData["Meta Data"]["3. Last Refreshed"];
 	}
 
-
 	document
 	.querySelector(".frm.stock")
 	.addEventListener(("submit"), (event) =>
 	{
 		event.preventDefault();
-		let tickerSymbol = event.target.querySelector('[name=symbol]').value;
+		let tickerSymbol = event.target.querySelector("[name=symbol]").value;
 		let currentStockEndPoint = `${BASE_END_POINT}function=${FUNCTION_TYPE}&symbol=${tickerSymbol}&apikey=${API_KEY}`;
 
 		fetch(currentStockEndPoint).then((response) =>
