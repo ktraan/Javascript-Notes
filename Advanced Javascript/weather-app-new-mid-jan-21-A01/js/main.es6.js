@@ -7,7 +7,7 @@
 	/**
 	 * @const {string} BASE_END_POINT 
 	 */
-	const BASE_END_POINT = "https://api.openweathermap.org/data/2.5/";
+	const BASE_END_POINT = "http://api.openweathermap.org/data/2.5/";
 	/**
 	 * @const {string} API_KEY
 	 */
