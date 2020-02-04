@@ -98,3 +98,39 @@ completeHomeWork(false).catch((result) =>{
 
 - Go to handlebars.js and download the compiler + runtime, place it into the js > vendor folder
 
+## CSS Preprocessors
+
+## Sass, Less and CSS
+- These preprocessors will help make CSS easier to structure/maintain/read
+- Sass and Less gives us variables, mixins, nested, built in funcitions, conditions and loops
+- Install less with ```npm install less --save-dev``` or ```npm install less -g```(globall)
+- To run less ```npx lessc <input-less-file.less> <output-css-file.css>```
+- npx lessec cmd to build
+- input is less file you want converted
+- output is the output file that you will link to your CSS
+### Variables
+- Less File:
+````javascript
+@danger-color: #bf2020;
+
+a {
+  color: @danger-color;
+}
+
+````
+- After processing:
+````javascript
+a {
+  color: #bf2020;
+}
+````
+### Mixins
+- Mixins are properties that can be used in other css properties
+
+
+
+
+
+
+
+

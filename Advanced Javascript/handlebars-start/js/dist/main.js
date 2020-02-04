@@ -1,8 +1,8 @@
 "use strict";
 
 // Let's compile the template
-var source = document.querySelector("#project-template").innerHTML;
-var template = Handlebars.compile(source);
+// const source = document.querySelector("#project-template").innerHTML;
+// const template = Handlebars.compile(source);
 Handlebars.registerHelper("currency", function (value) {
   return value.toLocaleString("en-US", {
     style: "currency",
@@ -15,7 +15,7 @@ Handlebars.registerHelper("currency", function (value) {
  */
 
 var renderProject = function renderProject(proj) {
-  document.querySelector(".project").innerHTML = template(proj);
+  document.querySelector(".project").innerHTML = Handlebars.template.project(proj);
 }; // now, fetch projects and render the first one.
 
 

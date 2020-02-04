@@ -1,0 +1,22 @@
+/* 
+	build this with the following command
+	npx lessc less/example_two.less dist/css/example_two.css 
+*/
+
+.container {
+  width: 960px;
+  background-color: green;
+  color: blue;
+  .some-class {
+    color: red;
+  }
+  &-small {
+    width: 480px;
+  }
+  a {
+    color: blue;
+    &:hover {
+      color: green;
+    }
+  }
+}

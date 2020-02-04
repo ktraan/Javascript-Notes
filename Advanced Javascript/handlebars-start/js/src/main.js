@@ -1,6 +1,6 @@
 // Let's compile the template
-const source = document.querySelector("#project-template").innerHTML;
-const template = Handlebars.compile(source);
+// const source = document.querySelector("#project-template").innerHTML;
+// const template = Handlebars.compile(source);
 
 Handlebars.registerHelper("currency", (value) =>
 {
@@ -17,7 +17,7 @@ Handlebars.registerHelper("currency", (value) =>
  * @param {Object} proj - Single project object 
  */
 const renderProject = (proj) => {
-    document.querySelector(".project").innerHTML = template(proj);
+    document.querySelector(".project").innerHTML = Handlebars.template.project(proj);
 };
 
 // now, fetch projects and render the first one.

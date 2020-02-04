@@ -1,0 +1,16 @@
+/* 
+	build this with the following command
+	npx lessc less/example_three.less dist/css/example_three.css 
+*/
+.a-mixin-class {
+  color: black;
+  background-color: darkred;
+}
+.another-mixin-class {
+  font-size: 20px;
+}
+.common-styles {
+  color: black;
+  background-color: darkred;
+  font-size: 20px;
+}
