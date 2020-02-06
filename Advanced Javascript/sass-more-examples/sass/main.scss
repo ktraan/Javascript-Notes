@@ -1,0 +1,48 @@
+@import 'boilerplate';
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+$text-primary:  #627D98;
+$text-secondary: #243B53;
+$text-tertiary: #BCCCDC;
+$highlight: #D9E2EC;
+
+@mixin rounded-border {
+    padding: 1rem;
+    border: 1px solid $text-tertiary;
+    border-radius: 10px;
+}
+
+.container {
+    margin: 1rem 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $text-secondary;
+    
+    @include rounded-border;
+
+
+    h1,
+    h2 {
+        color: $text-primary;
+        text-align: center;
+    }
+}
+
+.project {
+    table {
+        @include rounded-border;
+
+        tr th {
+            border-bottom: 1px solid $text-tertiary;
+        }
+
+        tbody tr {
+            &:nth-child(2n - 1) {
+                background-color: $highlight;
+            }
+        }
+    }
+}
+
+@import 'helper';

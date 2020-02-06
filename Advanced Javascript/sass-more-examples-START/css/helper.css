@@ -1,0 +1,13 @@
+@import 'boilerplate';
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+$text-primary: #624d98;
+$text-secondary: #243853;
+$text-tertiary: #bcccdc;
+$text-highlight: #d9e2ec;
+
+@import 'helpers';
