@@ -105,22 +105,24 @@ completeHomeWork(false).catch((result) =>{
 - npx lessec cmd to build
 - input is less file you want converted
 - output is the output file that you will link to your CSS
-### Variables
-- Less File:
-````javascript
-@danger-color: #bf2020;
-a {
-  color: @danger-color;
-}
-````
-- After processing:
-````javascript
-a {
-  color: #bf2020;
-}
-````
 ### Mixins
 - Mixins are properties that can be used in other css properties
+
+## Modules
+- In Javascript ES6+ modules refer to small units of code that can be stored in their own files that are easily readable and understandable. 
+
+- ES6+ modules replaced two older module system in ES5: 
+  - CommonJS
+  - RequireJS or Asynchronous Module Definition (AMD)
+- ES6+ modules, has taken the best parts of CommonJS and RequireJS so that you can just use them in your code.
+- Modules help keep us organized
+- It will allow us to import parts of code into test modules so we can test code
+- There are a couple of different ways to export (expose function to other scripts) in javascript:
+  - Named exports (as many as you want per file) you can do this with using “export”.
+  - Default export (ONE per file) you can do this with using “export default”.
+- Using modules in the browser
+  - ```<script type="module" src="lib.mjs"></script>```
+
 
 
 
