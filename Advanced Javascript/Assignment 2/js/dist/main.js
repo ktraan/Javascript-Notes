@@ -22,8 +22,16 @@
   // };
 
   var renderStock = function renderStock(data) {
-    console.log(data);
-    document.querySelector(".stock-display").innerHTML = Handlebars.templates['stock'](data);
+    var _data$GlobalQuote = data['Global Quote'],
+        symbol = _data$GlobalQuote['01. symbol'],
+        price = _data$GlobalQuote['05. price'],
+        date = _data$GlobalQuote['07. latest trading day'];
+    var stockObject = {
+      "symbol": symbol,
+      "price": price,
+      "date": date
+    };
+    document.querySelector(".stock-display").innerHTML = Handlebars.templates['stock'](stockObject);
   };
   /**
    * Handle symbol form submit to fetch the desired symbol information.

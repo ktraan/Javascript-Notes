@@ -20,8 +20,14 @@ const ENDPOINT = 'https://www.alphavantage.co/query?function=';
 
 const renderStock = (data) => 
 {
-    console.log(data);
-    document.querySelector(".stock-display").innerHTML = Handlebars.templates['stock'](data);
+    let {'01. symbol':symbol, '05. price':price, '07. latest trading day':date} = data['Global Quote'];
+    let stockObject =
+    {
+        "symbol": symbol,
+        "price": price,
+        "date": date
+    }
+    document.querySelector(".stock-display").innerHTML = Handlebars.templates['stock'](stockObject);
 }
 
 
@@ -49,6 +55,8 @@ const fetchTickerData = (evt) => {
     .catch(err => { // BONUS
         alert(`There was an error: ${err}`);
     });
+
+    
 };
 
 // add the submit listener
