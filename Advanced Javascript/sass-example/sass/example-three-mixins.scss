@@ -1,0 +1,15 @@
+/*
+To build this file
+npx node-sass sass/example-three-mixins.scss dist/css/example-three-mixins.css */
+
+@mixin large-text {
+  font-size: 25rem;
+  font-weight: bold;
+}
+
+h1 {
+  @include large-text;
+}
+h2 {
+  @include large-text;
+}

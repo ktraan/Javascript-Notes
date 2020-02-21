@@ -1,0 +1,18 @@
+/*
+To build this file
+npx node-sass sass/example-two-nesting.scss dist/css/example-two-nesting.css */
+
+#main {
+  background-color: #fff;
+  #content {
+    p {
+      height: auto;
+    }
+    a {
+      text-decoration: none;
+    }
+    &-something {
+      color: green;
+    }
+  }
+}

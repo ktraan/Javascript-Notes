@@ -8,12 +8,20 @@ templates['stock'] = template({"compiler":[8,">= 4.3.0"],"main":function(contain
         return undefined
     };
 
-  return " <h1>Stock Viewer</h1>\r\n <div class=\"details\">symbol: "
-    + alias4(((helper = (helper = lookupProperty(helpers,"symbol") || (depth0 != null ? lookupProperty(depth0,"symbol") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"symbol","hash":{},"data":data,"loc":{"start":{"line":2,"column":30},"end":{"line":2,"column":40}}}) : helper)))
-    + "</div>\r\n <div class=\"details\">date: "
-    + alias4(((helper = (helper = lookupProperty(helpers,"date") || (depth0 != null ? lookupProperty(depth0,"date") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data,"loc":{"start":{"line":3,"column":28},"end":{"line":3,"column":36}}}) : helper)))
-    + "</div>\r\n<div class=\"details\">price: "
-    + alias4(((helper = (helper = lookupProperty(helpers,"price") || (depth0 != null ? lookupProperty(depth0,"price") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"price","hash":{},"data":data,"loc":{"start":{"line":4,"column":28},"end":{"line":4,"column":37}}}) : helper)))
-    + "</div>\r\n\r\n";
+  return "<h1>Stock Viewer</h1>\r\n<div class=\"details\">Symbol: "
+    + alias4(((helper = (helper = lookupProperty(helpers,"symbol") || (depth0 != null ? lookupProperty(depth0,"symbol") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"symbol","hash":{},"data":data,"loc":{"start":{"line":2,"column":29},"end":{"line":2,"column":39}}}) : helper)))
+    + "</div>\r\n<div class=\"details\">Date: "
+    + alias4(((helper = (helper = lookupProperty(helpers,"date") || (depth0 != null ? lookupProperty(depth0,"date") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data,"loc":{"start":{"line":3,"column":27},"end":{"line":3,"column":35}}}) : helper)))
+    + "</div>\r\n<h2>Last Five Days Closing Prices</h2>\r\n<ul>\r\n    <li>Close: "
+    + alias4((lookupProperty(helpers,"currency")||(depth0 && lookupProperty(depth0,"currency"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"closeOne") : depth0),{"name":"currency","hash":{},"data":data,"loc":{"start":{"line":6,"column":15},"end":{"line":6,"column":36}}}))
+    + "</li>\r\n    <li>Close: "
+    + alias4((lookupProperty(helpers,"currency")||(depth0 && lookupProperty(depth0,"currency"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"closeTwo") : depth0),{"name":"currency","hash":{},"data":data,"loc":{"start":{"line":7,"column":15},"end":{"line":7,"column":36}}}))
+    + "</li>\r\n    <li>Close: "
+    + alias4((lookupProperty(helpers,"currency")||(depth0 && lookupProperty(depth0,"currency"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"closeThree") : depth0),{"name":"currency","hash":{},"data":data,"loc":{"start":{"line":8,"column":15},"end":{"line":8,"column":38}}}))
+    + "</li>\r\n    <li>Close: "
+    + alias4((lookupProperty(helpers,"currency")||(depth0 && lookupProperty(depth0,"currency"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"closeFour") : depth0),{"name":"currency","hash":{},"data":data,"loc":{"start":{"line":9,"column":15},"end":{"line":9,"column":37}}}))
+    + "</li>\r\n    <li>Close: "
+    + alias4((lookupProperty(helpers,"currency")||(depth0 && lookupProperty(depth0,"currency"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"closeFive") : depth0),{"name":"currency","hash":{},"data":data,"loc":{"start":{"line":10,"column":15},"end":{"line":10,"column":37}}}))
+    + "</li>\r\n    \r\n</ul>\r\n\r\n\r\n";
 },"useData":true});
 })();

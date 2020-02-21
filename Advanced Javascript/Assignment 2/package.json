@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "babel": "npx babel js/main.es6.js -o js/dist/main.js",
-    "handlebars": "npx handlebars js/src/templates/stock.handlebars -f js/dist/stock-template.js"
+    "handlebars": "npx handlebars js/src/templates/stock.handlebars -f js/dist/stock-template.js",
+    "sass": "npx node-sass css/main.scss css/main.css",
+    "build": "npm run handlebars && npm run sass"
+    
   },
   "keywords": [],
   "author": "",
@@ -25,6 +28,7 @@
     ]
   },
   "dependencies": {
-    "handlebars": "^4.7.3"
+    "handlebars": "^4.7.3",
+    "node-sass": "^4.13.1"
   }
 }

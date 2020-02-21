@@ -1,0 +1,11 @@
+/*
+To build this file
+npx node-sass sass/example-one-variables.scss dist/css/example-one-variables.css*/
+$theme-color: #fff;
+
+p {
+	background-color: $theme-color;
+}
+h1 {
+	background-color: $theme-color;
+}
