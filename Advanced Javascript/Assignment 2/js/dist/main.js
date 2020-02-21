@@ -53,25 +53,20 @@
 
 
   var fetchTickerData = function fetchTickerData(evt) {
-    evt.preventDefault(); // get the symbol
-
+    evt.preventDefault();
     var symbol = evt.target.elements['symbol'].value;
     fetch("".concat(ENDPOINT).concat(FUNCTION_TYPE, "&symbol=").concat(symbol, "&apikey=").concat(API_KEY)).then(function (response) {
       return response.json();
     }).then(function (data) {
-      // log and export all data
       if (data['Error Message']) {
-        // BONUS
         throw new Error("There was an error fulfilling your request. Be sure you've entered a valid symbol");
       }
 
       renderStock(data);
     })["catch"](function (err) {
-      // BONUS
       alert("There was an error: ".concat(err));
     });
-  }; // add the submit listener
-
+  };
 
   document.querySelector('.frm.symbol').addEventListener('submit', fetchTickerData);
 })();

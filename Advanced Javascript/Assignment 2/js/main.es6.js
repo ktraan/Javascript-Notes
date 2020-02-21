@@ -38,7 +38,6 @@ const renderStock = (data) =>
         "closeFive": closeFive
     }
     document.querySelector(".stock-display").innerHTML = Handlebars.templates['stock'](stockObject);
-    
 }
 
 /**
@@ -47,7 +46,6 @@ const renderStock = (data) =>
  */
 const fetchTickerData = (evt) => {
     evt.preventDefault();
-    // get the symbol
     const symbol = evt.target.elements['symbol'].value;
 
     fetch(`${ENDPOINT}${FUNCTION_TYPE}&symbol=${symbol}&apikey=${API_KEY}`)
@@ -55,19 +53,13 @@ const fetchTickerData = (evt) => {
         return response.json();
     })
     .then(data => {
-        // log and export all data
-        if (data['Error Message']) { // BONUS
+        if (data['Error Message']) { 
             throw new Error(`There was an error fulfilling your request. Be sure you've entered a valid symbol`);
         }
         renderStock(data);
-        
     })
-    .catch(err => { // BONUS
+    .catch(err => { 
         alert(`There was an error: ${err}`);
     });
-
-    
 };
-
-// add the submit listener
 document.querySelector('.frm.symbol').addEventListener('submit', fetchTickerData);

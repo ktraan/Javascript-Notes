@@ -10,7 +10,6 @@ $secondary-font-color: #2b52d3;
 }
 
 form {
-
     label {
         font-style: italic;
         color: #3a3a3a;
@@ -29,10 +28,7 @@ form {
         height: 30px;
         font-size: 12px;
         font-weight: bold;
-
-
     }
-    
 }
 
 h1 {
@@ -43,7 +39,6 @@ h2 {
     color: $primary-font-color;
     @include arial-font;
 }
-
 
 .details {
     color: $secondary-font-color;
