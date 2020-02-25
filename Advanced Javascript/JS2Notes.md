@@ -123,6 +123,33 @@ completeHomeWork(false).catch((result) =>{
 - Using modules in the browser
   - ```<script type="module" src="lib.mjs"></script>```
 
+## JS Testing with Mocha, Chai, Sinon
+- Software is hard, which means bugs happen. We want to minimize this as much as possible as bugs in software can lead to large monetary losses, or losses in human life (like boeing).
+- Testing each piece of the software (unit testing each function) to testing the software as whole (functional/end to end tests) gives us software that tests the software we’ve built.
+- Having software tests is intertwined with the term “software quality”, basically it’s great to have tests because they can act as a check to make sure you don’t break things and can act as documentation. Other reasons why it’s great:
+  - If you make an error that’s going to break the code somewhere else and you run all of your tests that error should show up.
+  - You should save time by doing the above and not introducing as many bugs.
+  - It makes you think about possible bugs that you’re going to come into.
+  - You can build this into a workflow which deploys your code if your tests pass.
+
+### Types of Tests
+- Unit Tests
+  - This test individual blocks of code, these will make up the majority of tests
+- Intergration Tests
+  - This will run multiple unit tests together, this is similar to JUnit Suite Test
+- Functional Tests
+  - A full test of the product itself by using a browser.
+
+### Testing now vs Unit Testing
+- One thing to note about unit tests is that we’re not testing anything external to just this unit. In unit tests we **never** touch things that go to a database or over a network, and most time external packages (more on this in the future!)
+- We’re going to take a look at unit testing and different ways to test things. To be a little bit more specific we’re going to take a look at:
+  - How you’re testing stuff now.
+  - Whether you know it or not you’re testing your code.
+    Testing After Development (TAD). This is writing your application code and then testing it afterwards.
+  - Test Driven Development. This is a method of writing code that sounds simple but it really changes the way that you code. You first write the tests, run them (they should fail first time), then write your application code.
+- The difference of TAD and TDD is that TDD you write the test first, then the code, vice versa
+- Behaviour Driven Development is a concept that is built upon TDD
+- In BDD, we specify tasks such as the Title, Narrative(description of features), Acceptance criteria(description of each specific scenario)
 
 
 
