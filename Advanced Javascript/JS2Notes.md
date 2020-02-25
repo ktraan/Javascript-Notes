@@ -166,6 +166,8 @@ completeHomeWork(false).catch((result) =>{
 npm install mocha --save-dev
 npm install chai --save-dev
 ````
+- To ES6 with mocha you’re going to need all the babel we had in the past but we’re also going to have to download one more part of babel which is “@babel/register” (you can also use “esm” as well.) which you can install with the following command:
+
 
 
 
