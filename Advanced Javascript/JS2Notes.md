@@ -151,7 +151,21 @@ completeHomeWork(false).catch((result) =>{
 - Behaviour Driven Development is a concept that is built upon TDD
 - In BDD, we specify tasks such as the Title, Narrative(description of features), Acceptance criteria(description of each specific scenario)
 
+### Parts needed for Testing
+1. Test Runner (or Test Environment)
+  - This is a package that will run all of your tests(Such as Mocha)
+2. Assertion Library
+  - This is a package that basically sees if when we test our unit is equal to something that we expect(Such as Chai)
+3. Headless Browser
+  - This is not for Unit tests whatsoever so we can ignore this for now, but it’s basically a browser that you can program for functional and end to end tests.
 
+### Installing Mocha and Chai
+
+- Use NPM commands to install Mocha and Chai
+````
+npm install mocha --save-dev
+npm install chai --save-dev
+````
 
 
 
