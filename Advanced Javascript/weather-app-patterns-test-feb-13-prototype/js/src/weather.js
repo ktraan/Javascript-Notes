@@ -90,6 +90,4 @@ Weather.prototype.getWeatherAndForecast =  function() {
 		});
 }
 
-window.Weather = Weather;
-
 export {Weather};

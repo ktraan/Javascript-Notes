@@ -7,7 +7,8 @@
     "babel": "npx babel js/src/ --out-dir js/dist/ --ignore \"js/src/**/*.handlebars\"",
     "watch": "npx babel js/src/ --out-dir js/dist/ --ignore \"js/src/**/*.handlebars\" --watch",
     "handlebars": "npx handlebars js/src/templates/ -f js/dist/templates.js -k each",
-    "build": "npm run babel && npm run handlebars"
+    "build": "npm run babel && npm run handlebars",
+    "test": "npx mocha --require esm"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,10 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
-    "handlebars": "^4.3.1"
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "handlebars": "^4.3.1",
+    "mocha": "^7.1.0"
   },
   "babel": {
     "presets": [

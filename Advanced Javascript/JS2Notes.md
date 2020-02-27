@@ -167,6 +167,18 @@ npm install mocha --save-dev
 npm install chai --save-dev
 ````
 - To ES6 with mocha you’re going to need all the babel we had in the past but we’re also going to have to download one more part of babel which is “@babel/register” (you can also use “esm” as well.) which you can install with the following command:
+```npx mocha --require @babel/register```
+
+### Mocking
+To be able to mock our fetch requests we’re going to need a few packages to get up and running so that we can simulate them. Here’s the packages that we’re going to need to simulate them. 
+- ESM -this is a package we’re going to use instead of babel/register, gives us a simple module loader.
+- Fetch-mock -Fetch mock is a pretty flexible mocking library to mock your network calls and simulate a response, headers, and other things associated with it.
+- Node-fetch - This is a requirement of fetch-mock so we’re going to install it.
+- Chai as Promised - Chai as promised entends chai so that we can use the assertion library with promises which is pretty neat. To use this under your should declaration you’ll need “chai.use(chaiAsPromised);”
+- Install these with this cmd:
+```npm install chai-as-promised esm fetch-mock node-fetch --save-dev```
+
+
 
 
 
