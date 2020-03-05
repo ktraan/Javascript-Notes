@@ -109,7 +109,7 @@ completeHomeWork(false).catch((result) =>{
 - Mixins are properties that can be used in other css properties
 
 ## Modules
-- In Javascript ES6+ modules refer to small units of code that can be stored in their own files that are easily readable and understandable. 
+- In Javascript ES6+ modules refer to small units of code that can be stored in their own files that are easily readable and understandable. **IMPORTING/EXPORTING** 
 
 - ES6+ modules replaced two older module system in ES5: 
   - CommonJS
@@ -177,6 +177,19 @@ To be able to mock our fetch requests we’re going to need a few packages to ge
 - Chai as Promised - Chai as promised entends chai so that we can use the assertion library with promises which is pretty neat. To use this under your should declaration you’ll need “chai.use(chaiAsPromised);”
 - Install these with this cmd:
 ```npm install chai-as-promised esm fetch-mock node-fetch --save-dev```
+
+## Sinon
+- Sinon.js gives us the ability to have mocks, stubs and spies
+- Install Sinon with npm ```npm install sinon --save-dev```
+- Import it into your test file: ```import sinon from 'sinon'```
+- Spies: spies are functions that record method calls, so for us we’ll be creating spies to check if we’re calling external libraries with the correct arguments. 
+  - (What arguments am I using to call the external library)
+- Stubs: Stubs extend spies functionality, but they also add functionality that we can dictate what is returned as a result of the function being called. This is great because we can force our code to go down certain paths.
+  - (Stubs are spies but can modify what it should return)
+- Mocks: Mocks are like stubs, except they have pre-programmed expectations. 
+
+
+
 
 
 
