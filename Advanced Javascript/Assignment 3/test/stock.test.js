@@ -71,6 +71,11 @@ describe('Stock constructor', function () {
     });
 
     describe('#getStockPrice()', function () {
+        let stock;
+        const SYMBOL = "VOO";
+        const PRICE = 300;
+        
+
         xit('returns the symbol, price, and date', function () {
             // TODO: assert that the method resolves an object that has at a minimum the
             // required properties
