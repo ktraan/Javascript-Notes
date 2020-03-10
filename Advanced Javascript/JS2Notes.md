@@ -188,6 +188,12 @@ To be able to mock our fetch requests we’re going to need a few packages to ge
   - (Stubs are spies but can modify what it should return)
 - Mocks: Mocks are like stubs, except they have pre-programmed expectations. 
 
+# React
+- From the React site "A JavaScript library for building user interfaces".
+- This is a library that can be used to create "single page applications". Single Page Application make it so we don't have to fetch a new page every time we navigate on our site, or refresh our web pages when create/update data.
+- React lets you build really complicated User Interfaces (UIs) by breaking parts of your page into what's called "Components".
+- React also primarily uses JSX (templatingish language) which is a super flexible html like syntax that we're going to look at today.
+
 
 
 
