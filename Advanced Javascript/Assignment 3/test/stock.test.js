@@ -72,36 +72,43 @@ describe('Stock constructor', function () {
                 stock.stockHistoryData.high.should.equal(TEST_HIGH);
                 stock.stockHistoryData.low.should.equal(TEST_LOW);
                 stock.stockHistoryData.close.should.equal(TEST_CLOSE);
+
+                
             });
         });
     });
 
     describe('#getStockPrice()', function () {
         let stock;
-        before("Setup fetch-mock", function() {
-            fetchMock.get(STOCK_URL, {
-                "Global Quote": {
-                  "01. symbol": "VOO",
-                  "02. open": "256.6600",
-                  "03. high": "257.7200",
-                  "04. low": "247.6200",
-                  "05. price": "250.7400",
-                  "06. volume": "11455838",
-                  "07. latest trading day": "2020-03-11",
-                  "08. previous close": "263.8100",
-                  "09. change": "-13.0700",
-                  "10. change percent": "-4.9543%"
-                }
-              });
-        })
-        beforeEach("Setup fetch-mock", function() {
-            stock = new Stock({ symbol:TEST_SYMBOL });
-        })
+        // const TEST_STOCK_DATA = {
+        //     symbol: TEST_SYMBOL
+        // }
+        // before("Setup fetch-mock", function() {
+        //     fetchMock.get(STOCK_URL, {
+        //         "Global Quote": {
+        //           "01. symbol": TEST_SYMBOL,
+        //           "02. open": "256.6600",
+        //           "03. high": "257.7200",
+        //           "04. low": "247.6200",
+        //           "05. price": "250.7400",
+        //           "06. volume": "11455838",
+        //           "07. latest trading day": "2020-03-11",
+        //           "08. previous close": "263.8100",
+        //           "09. change": "-13.0700",
+        //           "10. change percent": "-4.9543%"
+        //         }
+        //       });
+        // })
+        // before("Setup object", function() {
+        //     stock = new Stock({ symbol: TEST_SYMBOL});
+        // })
         it('returns the symbol, price, and date', function () {
             // TODO: assert that the method resolves an object that has at a minimum the
             // required properties
-            let stockData = stock.getStockPrice();
-            return stockData.should.have.property("symbol");
+            
+
+            // fetchMock.lastUrl().should.equal(STOCK_URL);
+            //return stockData.should.eventually.deep.equal(TEST_STOCK_DATA);
             
 
             // TODO: assert that the instance has the required data saved to its stockData
