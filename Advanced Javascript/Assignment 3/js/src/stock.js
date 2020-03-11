@@ -42,4 +42,4 @@ Stock.prototype.getStockFiveDayHistory = function() {
     });
 }
 
-export { Stock };
+export { Stock, ENDPOINT, API_KEY };
