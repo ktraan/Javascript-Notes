@@ -64,6 +64,7 @@ describe('Stock constructor', function () {
             before("Populated Stock instance", function() {
                 stock = new Stock({ symbol: TEST_SYMBOL,
                                     stockData: {
+                                        symbol: TEST_SYMBOL,
                                         price: TEST_PRICE,
                                         date: TEST_DATE,
                                         open: TEST_OPEN,
@@ -76,6 +77,7 @@ describe('Stock constructor', function () {
                 // TODO: assert that when the constructor is called with an object of attributes
                 // that the attributes are all assigned as properties on the insance
                 stock.symbol.should.equal(TEST_SYMBOL);
+                stock.stockData.symbol.should.equal(TEST_SYMBOL);
                 stock.stockData.price.should.equal(TEST_PRICE);
                 stock.stockData.date.should.equal(TEST_DATE);
                 stock.stockData.open.should.equal(TEST_OPEN);
