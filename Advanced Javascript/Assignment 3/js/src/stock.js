@@ -26,18 +26,18 @@ Stock.prototype.getStockPrice = function() {
 
 
 Stock.prototype.getStockFiveDayHistory = function() {
-    return fetch(`${ENDPOINT}TIME_SERIES_DAILY&symbol=${currentSymbol}&apikey=${API_KEY}`)
+    return fetch(`${ENDPOINT}TIME_SERIES_WEEKLY&symbol=${this.symbol}&apikey=${API_KEY}`)
     .then(response => {
         return response.json();
     })
     .then(data => {
-        date = data["TimeSeries"]["07. latest trading day"],
-        open = data["Global Quote"]["02. open"],
-        high = data["Global Quote"]["03. high"],
-        low = data["Global Quote"]["04. low"],
-        close = data["Global Quote"]["08. previous close"];
+        let currentDate;
+        let nextDate;
+        let day = -1;
+        let fiveDayHistory = [];
 
-        return Object.assign(this.stockHistoryData, {date, open, high, low, close});
+        
+        return Object.assign(this.stockHistoryData, {fiveDayHistory});
     });
 }
 
