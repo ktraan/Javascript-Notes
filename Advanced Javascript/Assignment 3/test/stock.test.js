@@ -19,20 +19,6 @@ const TEST_HIGH = 9002;
 const TEST_LOW = 8999;
 const TEST_CLOSE = 9001;
 const STOCK_URL = `${ENDPOINT}GLOBAL_QUOTE&symbol=${TEST_SYMBOL}&apikey=${API_KEY}`
-const STOCK_OUTPUT = {
-    "Global Quote": {
-      "01. symbol": TEST_SYMBOL,
-      "02. open": TEST_OPEN,
-      "03. high": TEST_HIGH,
-      "04. low": TEST_LOW,
-      "05. price": TEST_PRICE,
-      "06. volume": "10809270",
-      "07. latest trading day": TEST_DATE,
-      "08. previous close": TEST_CLOSE,
-      "09. change": "11.7000",
-      "10. change percent": "4.6408%"
-    }
-  };
 
 
 // NOTE: all tests are currently pending. Your task is to create the assertions,
@@ -67,10 +53,12 @@ describe('Stock constructor', function () {
                                         symbol: TEST_SYMBOL,
                                         price: TEST_PRICE,
                                         date: TEST_DATE,
-                                        // open: TEST_OPEN,
-                                        // high: TEST_HIGH,
-                                        // low: TEST_LOW,
-                                        // close: TEST_CLOSE
+                                    },
+                                    stockHistoryData: {
+                                        open: TEST_OPEN,
+                                        high: TEST_HIGH,
+                                        low: TEST_LOW,
+                                        close: TEST_CLOSE
                                     }});
             });
             it('should assign attribute values as properties on the instance', function () {
@@ -79,20 +67,43 @@ describe('Stock constructor', function () {
                 stock.symbol.should.equal(TEST_SYMBOL);
                 stock.stockData.symbol.should.equal(TEST_SYMBOL);
                 stock.stockData.price.should.equal(TEST_PRICE);
-                // stock.stockData.date.should.equal(TEST_DATE);
-                // stock.stockData.open.should.equal(TEST_OPEN);
-                // stock.stockData.high.should.equal(TEST_HIGH);
-                // stock.stockData.low.should.equal(TEST_LOW);
-                // stock.stockData.close.should.equal(TEST_CLOSE);
-                
+                stock.stockHistoryData.should.be.an("Object");
+                stock.stockHistoryData.open.should.equal(TEST_OPEN);
+                stock.stockHistoryData.high.should.equal(TEST_HIGH);
+                stock.stockHistoryData.low.should.equal(TEST_LOW);
+                stock.stockHistoryData.close.should.equal(TEST_CLOSE);
             });
         });
     });
 
     describe('#getStockPrice()', function () {
+        let stock;
+        before("Setup fetch-mock", function() {
+            fetchMock.get(STOCK_URL, {
+                "Global Quote": {
+                  "01. symbol": "VOO",
+                  "02. open": "256.6600",
+                  "03. high": "257.7200",
+                  "04. low": "247.6200",
+                  "05. price": "250.7400",
+                  "06. volume": "11455838",
+                  "07. latest trading day": "2020-03-11",
+                  "08. previous close": "263.8100",
+                  "09. change": "-13.0700",
+                  "10. change percent": "-4.9543%"
+                }
+              });
+        })
+        beforeEach("Setup fetch-mock", function() {
+            stock = new Stock({ symbol:TEST_SYMBOL });
+        })
         it('returns the symbol, price, and date', function () {
             // TODO: assert that the method resolves an object that has at a minimum the
             // required properties
+            let stockData = stock.getStockPrice();
+            return stockData.should.have.property("symbol");
+            
+
             // TODO: assert that the instance has the required data saved to its stockData
             // property
         });

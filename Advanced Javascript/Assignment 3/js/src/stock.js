@@ -1,9 +1,14 @@
+const fetch = require("node-fetch");
+
 const API_KEY = '097S0L4ON78BMIRE';
 const ENDPOINT = 'https://www.alphavantage.co/query?function=';
+
+
 const Stock = function(attributes) 
 {
     this.symbol = "";
     this.stockData = {};
+    this.stockHistoryData = {};
     if(attributes) 
     {
         Object.assign(this, attributes);
@@ -31,13 +36,21 @@ Stock.prototype.getStockFiveDayHistory = function() {
         return response.json();
     })
     .then(data => {
-        let currentDate;
-        let nextDate;
-        let day = -1;
-        let fiveDayHistory = [];
+        let weeklyTimeArray = Object.getOwnPropertyNames(data["Weekly Time Series"]);
+        let fiveDayArray = weeklyTimeArray.slice(0,5);
+        let priceHistoryArray = [];
+         
+        for (let index = 0; index < fiveDayArray.length; index++)
+        {
+            priceHistoryArray.push(data["Weekly Time Series"][fiveDayArray[index]]);
+        }
 
-        
-        return Object.assign(this.stockHistoryData, {fiveDayHistory});
+        open = priceHistoryArray[0]['1. open'];
+        high = priceHistoryArray[0]['2. high'];
+        low = priceHistoryArray[0]['3. low'];
+        close = priceHistoryArray[0]['4. close'];
+        date = fiveDayArray[0];
+        return Object.assign(this.stockHistoryData, {open, high, low, close, date});
     });
 }
 
