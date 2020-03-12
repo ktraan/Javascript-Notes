@@ -18,9 +18,6 @@ const TEST_OPEN = 9000;
 const TEST_HIGH = 9002;
 const TEST_LOW = 8999;
 const TEST_CLOSE = 9001;
-const STOCK_URL = `${ENDPOINT}GLOBAL_QUOTE&symbol=${TEST_SYMBOL}&apikey=${API_KEY}`
-
-
 // NOTE: all tests are currently pending. Your task is to create the assertions,
 // then remove the pending status and see that all tests are currently failing.
 // Then, progresively implement the changes to your codebase so that each test
@@ -72,52 +69,66 @@ describe('Stock constructor', function () {
                 stock.stockHistoryData.high.should.equal(TEST_HIGH);
                 stock.stockHistoryData.low.should.equal(TEST_LOW);
                 stock.stockHistoryData.close.should.equal(TEST_CLOSE);
-
                 
             });
         });
     });
 
     describe('#getStockPrice()', function () {
+
         let stock;
-        // const TEST_STOCK_DATA = {
-        //     symbol: TEST_SYMBOL
-        // }
-        // before("Setup fetch-mock", function() {
-        //     fetchMock.get(STOCK_URL, {
-        //         "Global Quote": {
-        //           "01. symbol": TEST_SYMBOL,
-        //           "02. open": "256.6600",
-        //           "03. high": "257.7200",
-        //           "04. low": "247.6200",
-        //           "05. price": "250.7400",
-        //           "06. volume": "11455838",
-        //           "07. latest trading day": "2020-03-11",
-        //           "08. previous close": "263.8100",
-        //           "09. change": "-13.0700",
-        //           "10. change percent": "-4.9543%"
-        //         }
-        //       });
-        // })
-        // before("Setup object", function() {
-        //     stock = new Stock({ symbol: TEST_SYMBOL});
-        // })
+        const STOCK_URL = `${ENDPOINT}GLOBAL_QUOTE&symbol=${TEST_SYMBOL}&apikey=${API_KEY}`
+
+        const TEST_STOCK_DATA = {
+            symbol: TEST_SYMBOL,
+            price: TEST_PRICE,
+            date: TEST_DATE
+        };
+        before("Setup fetch mock", function() {
+            fetchMock.get(STOCK_URL, {
+                "Global Quote": {
+                  "01. symbol": TEST_SYMBOL,
+                  "02. open": TEST_OPEN,
+                  "03. high": TEST_HIGH,
+                  "04. low": TEST_LOW,
+                  "05. price": TEST_PRICE,
+                  "06. volume": "11455838",
+                  "07. latest trading day": "2020-03-11",
+                  "08. previous close": TEST_CLOSE,
+                  "09. change": "-13.0700",
+                  "10. change percent": "-4.9543%"
+                }
+            })
+        })
+        beforeEach(`Setup stock object for ${TEST_SYMBOL}`, function() {
+            stock = new Stock({ symbol: TEST_SYMBOL });
+        })
         it('returns the symbol, price, and date', function () {
             // TODO: assert that the method resolves an object that has at a minimum the
             // required properties
             
-
-            // fetchMock.lastUrl().should.equal(STOCK_URL);
-            //return stockData.should.eventually.deep.equal(TEST_STOCK_DATA);
+            let stockData = stock.getStockPrice();
+    
+            // stock.should.have.property("stockData");
+            //stockData.should.have.property("symbol");
+            stockData.should.eventually.have.property("symbol")
+            stockData.should.eventually.have.property("price");
+            stockData.should.eventually.have.property("date");
             
-
             // TODO: assert that the instance has the required data saved to its stockData
             // property
+
+            
+            //fetchMock.lastUrl().should.equal(STOCK_URL);
+            
+            //return stockData.should.eventually.deep.equal(TEST_STOCK_DATA);
+
+
         });
     });
 
     describe('#getStockFiveDayHistory()', function () {
-        it('returns an array of the previous five days open, high, low, close, and date', function () {
+        xit('returns an array of the previous five days open, high, low, close, and date', function () {
             // TODO: assert that the method resolves an array with five objects that each
             // contain at a minimum the required properties
             // TODO: assert that the instance has the required data saved to its stockData

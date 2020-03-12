@@ -21,7 +21,7 @@ Stock.prototype.getStockPrice = function() {
         return response.json();
     })
     .then(data => {
-        symbol = data["Global Quote"]["01. symbol"],
+        let symbol = data["Global Quote"]["01. symbol"],
         price = data["Global Quote"]["05. price"],
         date = data["Global Quote"]["07. latest trading day"];
 
