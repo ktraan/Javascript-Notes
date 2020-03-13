@@ -43,13 +43,23 @@ Stock.prototype.getStockFiveDayHistory = function() {
             priceHistoryArray.push(data["Weekly Time Series"][fiveDayArray[index]]);
         }
 
-        // open = priceHistoryArray[0]['1. open'];
-        // high = priceHistoryArray[0]['2. high'];
-        // low = priceHistoryArray[0]['3. low'];
-        // close = priceHistoryArray[0]['4. close'];
-        // date = fiveDayArray[0];
+        open = priceHistoryArray[0]['1. open'];
+        high = priceHistoryArray[0]['2. high'];
+        low = priceHistoryArray[0]['3. low'];
+        close = priceHistoryArray[0]['4. close'];
+        date = fiveDayArray[0];
         return Object.assign(this.stockHistoryData, priceHistoryArray);
     });
+}
+
+Stock.prototype.getStockPriceAndHistory = function() {
+    return this.getStockPrice(this.symbol)
+    .then(() => {
+        return this.getStockFiveDayHistory(this.symbol);
+    })
+    .then(() => {
+        return this.stockData, this.stockHistoryData
+    })
 }
 
 export { Stock };
