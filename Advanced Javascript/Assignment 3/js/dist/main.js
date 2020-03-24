@@ -1,7 +1,7 @@
 "use strict";
 
 /** API key for signing the request */
-var API_KEY = 'L4LJWNH4YMFNUWUH';
+var API_KEY = 'YOUR_API_KEY_HERE';
 /** Alpha Vantage REST endpoint */
 
 var ENDPOINT = 'https://www.alphavantage.co/query?function=';

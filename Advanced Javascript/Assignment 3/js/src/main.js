@@ -1,19 +1,15 @@
-/** API key for signing the request */
-const API_KEY = 'YOUR_API_KEY_HERE';
-/** Alpha Vantage REST endpoint */
-const ENDPOINT = 'https://www.alphavantage.co/query?function=';
-/** Track the current stock symbol */
-let currentSymbol = '';
+import {Stock} from './stock.js';
 
 /**
  * Display the current price and other information for a stock.
  * @param {HTMLElement} el DOM element parent for the display of the data.
- * @param {Object} data The returned stock symbol data
+ * @param {Stock} data stock manager
  */
 const displayCurrentPriceData = (el, data) => {
-    let {'01. symbol': symbol, '05. price': price, '07. latest trading day': date} = data['Global Quote'];
-
-    el.innerHTML = Handlebars.templates['stock-current']({symbol, price, date});
+    data.getStockPrice().then(() => {
+        el.innerHTML = Handlebars.templates['stock-current'](data.stockData);
+    })
+    
 };
 
 /**
