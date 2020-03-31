@@ -7,7 +7,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var StockSearchForm = function StockSearchForm() {
-  var _React$useState = React.useState("voo"),
+  var _React$useState = React.useState("msft"),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       stockSymbol = _React$useState2[0],
       setStockSymbol = _React$useState2[1];

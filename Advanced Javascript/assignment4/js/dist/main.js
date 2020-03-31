@@ -1,5 +1,7 @@
 // Our Imports:
-import StockSearchForm from "./components/StockSearchForm.js"; // Our Application
+import StockSearchForm from "./components/StockSearchForm.js";
+import StockPriceDisplay from "./components/StockPriceDisplay.js";
+import { Stock } from './stock.js'; // Our Application
 
 var App = function App() {
   return (
@@ -8,7 +10,13 @@ var App = function App() {
     /*#__PURE__*/
     React.createElement("h1", null, "Stock Viewer App"),
     /*#__PURE__*/
-    React.createElement(StockSearchForm, null))
+    React.createElement(StockSearchForm, null),
+    /*#__PURE__*/
+    React.createElement(StockPriceDisplay, {
+      stock: new Stock({
+        symbol: "VOO"
+      })
+    }))
   );
 };
 

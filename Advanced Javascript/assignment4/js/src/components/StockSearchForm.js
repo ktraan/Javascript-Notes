@@ -1,6 +1,6 @@
 const StockSearchForm = () => {
 
-    const [stockSymbol, setStockSymbol] = React.useState("voo");
+    const [stockSymbol, setStockSymbol] = React.useState("msft");
 
     const onSubmitHandler = (event) => {
         console.log("Stock search form submitted");
