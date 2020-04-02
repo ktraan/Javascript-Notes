@@ -1,15 +1,14 @@
-const StockSearchForm = () => {
+const StockSearchForm = (props) => {
 
     const [stockSymbol, setStockSymbol] = React.useState("msft");
 
     const onSubmitHandler = (event) => {
-        console.log("Stock search form submitted");
-        console.log(`Current symbol: ${stockSymbol}`);
         event.preventDefault();
+        props.setStockCallback(stockSymbol);
     }
 
     const onChangeHandler = (event) => {
-        console.log(event.target.value);
+        
         setStockSymbol(event.target.value);
     }
 

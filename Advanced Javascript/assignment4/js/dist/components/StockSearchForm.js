@@ -6,20 +6,18 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var StockSearchForm = function StockSearchForm() {
+var StockSearchForm = function StockSearchForm(props) {
   var _React$useState = React.useState("msft"),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       stockSymbol = _React$useState2[0],
       setStockSymbol = _React$useState2[1];
 
   var onSubmitHandler = function onSubmitHandler(event) {
-    console.log("Stock search form submitted");
-    console.log("Current symbol: ".concat(stockSymbol));
     event.preventDefault();
+    props.setStockCallback(stockSymbol);
   };
 
   var onChangeHandler = function onChangeHandler(event) {
-    console.log(event.target.value);
     setStockSymbol(event.target.value);
   };
 

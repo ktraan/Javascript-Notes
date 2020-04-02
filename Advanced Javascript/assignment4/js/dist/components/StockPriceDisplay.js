@@ -20,14 +20,20 @@ var StockPriceDisplay = function StockPriceDisplay(props) {
 
   React.useEffect(function () {
     // call stock and set stock ata.
-    console.log("StockPriceDisplay loaded");
-    console.log(props.stock);
     props.stock.getStockPrice().then(function (priceData) {
-      setStockData(_objectSpread({}, priceData));
+      if (priceData instanceof Object) {
+        setStockData(_objectSpread({}, priceData));
+      } else {
+        setStockData({
+          error: priceData
+        });
+      }
     })["catch"](function (error) {
-      setStockData({});
+      setStockData({
+        error: error
+      });
     });
-  }, []);
+  }, [props.stock]);
   React.useEffect(function () {
     console.log("stock data has been changed");
     console.log(stockData);
@@ -40,31 +46,55 @@ var StockPriceDisplay = function StockPriceDisplay(props) {
     });
   };
 
-  return stockData === {} ?
-  /*#__PURE__*/
-  React.createElement("p", null, "No data or loading data..") :
-  /*#__PURE__*/
-  React.createElement("section", {
-    className: "stock-display"
-  },
-  /*#__PURE__*/
-  React.createElement("h2", null, "Stock Viewer Display"),
-  /*#__PURE__*/
-  React.createElement("div", {
-    className: "details"
-  }, "Symbol: ", stockData.symbol),
-  /*#__PURE__*/
-  React.createElement("div", {
-    className: "details"
-  }, "Price: ", stockData.price),
-  /*#__PURE__*/
-  React.createElement("div", {
-    className: ""
-  },
-  /*#__PURE__*/
-  React.createElement("button", {
-    className: "button-history"
-  }, "Previous 5 days")));
+  var isValidStock = function isValidStock() {
+    return props.stock.symbol !== "" && stockData.error === undefined;
+  };
+
+  var historyOnClickHandler = function historyOnClickHandler() {
+    props.stock.getStockFiveDayHistory().then(function (priceDataWithHistory) {
+      setStockData(_objectSpread({}, priceDataWithHistory));
+    }).error(function (error) {
+      setStockData({
+        error: error
+      });
+    });
+  };
+
+  return (
+    /*#__PURE__*/
+    React.createElement("section", {
+      className: "stock-display"
+    }, isValidStock ?
+    /*#__PURE__*/
+    React.createElement(React.Fragment, null,
+    /*#__PURE__*/
+    React.createElement("h2", null, "Stock Viewer Display"),
+    /*#__PURE__*/
+    React.createElement("div", {
+      className: "details"
+    }, "Symbol: ", stockData.symbol),
+    /*#__PURE__*/
+    React.createElement("div", {
+      className: "details"
+    }, "Price: ", stockData.price),
+    /*#__PURE__*/
+    React.createElement("div", null,
+    /*#__PURE__*/
+    React.createElement("button", {
+      className: "button-history",
+      onClick: historyOnClickHandler
+    }, "Previous 5 days")),
+    /*#__PURE__*/
+    React.createElement("div", {
+      className: "history"
+    }, stockData.history &&
+    /*#__PURE__*/
+    React.createElement("p", null, "There is some history here"))) :
+    /*#__PURE__*/
+    React.createElement(React.Fragment, null,
+    /*#__PURE__*/
+    React.createElement("p", null, "No data or error loading data")))
+  );
 };
 
 export default StockPriceDisplay;
