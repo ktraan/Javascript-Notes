@@ -1,53 +1,53 @@
-$primary-font-color: #646464;
-$secondary-font-color: #2b52d3;
+// $primary-font-color: #646464;
+// $secondary-font-color: #2b52d3;
 
-@mixin arial-font {
-    font-family: Arial, Helvetica, sans-serif;
-}
+// @mixin arial-font {
+//     font-family: Arial, Helvetica, sans-serif;
+// }
 
-@mixin verdana-font {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+// @mixin verdana-font {
+//     font-family: Verdana, Geneva, Tahoma, sans-serif;
+// }
 
-form {
-    label {
-        font-style: italic;
-        color: #3a3a3a;
-        font-size: 20px;
-        font-weight: bold;
-        @include arial-font();
-    }
-    input {
-        @include arial-font();        
-    }
-    button {
-        @include arial-font();
-        background-color: #21ec21;
-        text-align: center;
-        width: 70px;
-        height: 30px;
-        font-size: 12px;
-        font-weight: bold;
-    }
-}
+// form {
+//     label {
+//         font-style: italic;
+//         color: #3a3a3a;
+//         font-size: 20px;
+//         font-weight: bold;
+//         @include arial-font();
+//     }
+//     input {
+//         @include arial-font();        
+//     }
+//     button {
+//         @include arial-font();
+//         background-color: #21ec21;
+//         text-align: center;
+//         width: 70px;
+//         height: 30px;
+//         font-size: 12px;
+//         font-weight: bold;
+//     }
+// }
 
-h1 {
-    color: $primary-font-color;
-    @include arial-font;
-}
-h2 {
-    color: $primary-font-color;
-    @include arial-font;
-}
+// h1 {
+//     color: $primary-font-color;
+//     @include arial-font;
+// }
+// h2 {
+//     color: $primary-font-color;
+//     @include arial-font;
+// }
 
-.details {
-    color: $secondary-font-color;
-    @include verdana-font();
-}
+// .details {
+//     color: $secondary-font-color;
+//     @include verdana-font();
+// }
 
-ul {
-    li {
-        color: $secondary-font-color;
-        @include verdana-font();
-    }
-}
+// ul {
+//     li {
+//         color: $secondary-font-color;
+//         @include verdana-font();
+//     }
+// }
