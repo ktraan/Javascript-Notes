@@ -194,6 +194,19 @@ To be able to mock our fetch requests we’re going to need a few packages to ge
 - React lets you build really complicated User Interfaces (UIs) by breaking parts of your page into what's called "Components".
 - React also primarily uses JSX (templatingish language) which is a super flexible html like syntax that we're going to look at today.
 
+## Webpack
+- It is a package that is going to load all of your JS modules and dependancies and bundle it all into one javasctip file
+- It minfies code, bundles modules, load a single JS file instead of multiple, bundle CSS SCSS JSX ect
+- To install: ```npm install webpack webpack-cli babel-loader --save-dev```
+
+## Task Runners and Bundlers
+- A bundler is something that will takae modules that you tell it to load and package everything up into one big bundle for production site
+  - Ex Gulp, Grunt
+- A task runner is a way top automate tasks that need to happen during your build or deployment process
+  - Ex. Parcel (the future), Webpack (the current), Browserify (the past)
+
+
+
 
 
 
