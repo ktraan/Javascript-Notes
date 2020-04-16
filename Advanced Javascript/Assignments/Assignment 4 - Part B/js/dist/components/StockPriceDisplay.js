@@ -68,20 +68,13 @@ var StockPriceDisplay = function StockPriceDisplay(props) {
   };
 
   var saveOnClickHandler = function saveOnClickHandler() {
-    // props.stock.getCurrentAndFiveDayHistory()
-    // .then(priceAndHistoryData => {
-    //     //setStockData(priceAndHistoryData)
-    // })
-    // .catch((error) => {
-    //     setStockData({ error: error })
-    // })
     console.log("save button for array:");
     array.length = Math.min(array.length, 5);
 
     if (array.length >= 5) {
       console.log("Can only have 5 saved symbols");
     } else {
-      setArray(array.concat(stockData));
+      setArray(array.concat(stockData)); //setArray(array.push(stockData));
     }
 
     console.log(array);

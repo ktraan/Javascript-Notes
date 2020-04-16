@@ -22,9 +22,7 @@ var StockSaveDisplay = function StockSaveDisplay(props) {
           className: "price"
         }, "Price: ", stock.price),
         /*#__PURE__*/
-        React.createElement("div", {
-          className: "date"
-        }, "Date: ", stock.date))
+        React.createElement("hr", null))
       );
     }))
   );

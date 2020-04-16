@@ -11,7 +11,7 @@ const StockSaveDisplay = (props) => {
           <div className="symbol-key" key={stock.symbol}>
             <div className="symbol">Symbol: {stock.symbol}</div>
             <div className="price">Price: {stock.price}</div>
-            <div className="date">Date: {stock.date}</div>
+            <hr></hr>
           </div>
         );
       })}
