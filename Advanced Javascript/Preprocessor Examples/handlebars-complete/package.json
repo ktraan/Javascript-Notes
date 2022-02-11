@@ -19,7 +19,7 @@
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "handlebars": "^4.3.1"
+    "handlebars": "^4.7.7"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0"
